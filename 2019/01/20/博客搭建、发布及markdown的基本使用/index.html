@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="博客系统,markdown,Hexo,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;由于原来学习东西的时候都是在网上边学边用，缺少记录，有些知识总是容易忘记，所以针对博客建立和发布编写一个小文档作为记录。 博客搭建安装Node.js&amp;emsp;&amp;emsp;这里使用的是Hexo博客框架，它是基于Node.js的一种静态博客框架，可以用来生成各种静态网页。因此需要首先安装Node.js，下载地址。 &amp;emsp;&amp;emsp;安装完了之后可以通过：node -v或">
+<meta name="keywords" content="博客系统,markdown,Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搭建、发布及markdown的基本使用">
+<meta property="og:url" content="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/index.html">
+<meta property="og:site_name" content="Sea in the Summer">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;由于原来学习东西的时候都是在网上边学边用，缺少记录，有些知识总是容易忘记，所以针对博客建立和发布编写一个小文档作为记录。 博客搭建安装Node.js&amp;emsp;&amp;emsp;这里使用的是Hexo博客框架，它是基于Node.js的一种静态博客框架，可以用来生成各种静态网页。因此需要首先安装Node.js，下载地址。 &amp;emsp;&amp;emsp;安装完了之后可以通过：node -v或">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/菜单设置.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/categories_index.md.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/tags_index.md.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/标题使用示例.png">
+<meta property="og:updated_time" content="2019-01-22T03:31:45.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博客搭建、发布及markdown的基本使用">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;由于原来学习东西的时候都是在网上边学边用，缺少记录，有些知识总是容易忘记，所以针对博客建立和发布编写一个小文档作为记录。 博客搭建安装Node.js&amp;emsp;&amp;emsp;这里使用的是Hexo博客框架，它是基于Node.js的一种静态博客框架，可以用来生成各种静态网页。因此需要首先安装Node.js，下载地址。 &amp;emsp;&amp;emsp;安装完了之后可以通过：node -v或">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/菜单设置.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/">
+
+
+
+
+
+  <title>博客搭建、发布及markdown的基本使用 | Sea in the Summer</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sea in the Summer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Talk is cheap! Show me the code!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/20/博客搭建、发布及markdown的基本使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hai Xia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/./image/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sea in the Summer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">博客搭建、发布及markdown的基本使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T21:37:50+08:00">
+                2019-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tips/" itemprop="url" rel="index">
+                    <span itemprop="name">Tips</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;由于原来学习东西的时候都是在网上边学边用，缺少记录，有些知识总是容易忘记，所以针对博客建立和发布编写一个小文档作为记录。</p>
+<h3 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h3><h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>&emsp;&emsp;这里使用的是Hexo博客框架，它是基于Node.js的一种静态博客框架，可以用来生成各种静态网页。因此需要首先安装Node.js，<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">下载地址</a>。</p>
+<p>&emsp;&emsp;安装完了之后可以通过：<code>node -v</code>或者<code>npm -v</code>命令查看安装版本，以此确认是否安装成功。Windows10系统推荐直接使用powershell进行check。前面提到的npm其实是一个附带的工具，用于下载其他的程序。如果下载的时候国内网速太慢亦可以使用<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>下载<code>cnpm</code>代替<code>npm</code>的使用。</p>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>&emsp;&emsp;在成功安装了Node.js之后接下来安装Hexo框架。在安装之前首先应该在本地建立和github远端相关联的github.io仓库。github会给每个账户提供一个仓库用于部署github.io的个人网站，其仓库名默认为：用户名/用户名.github.io。（git的使用可以见廖雪峰老师的<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">网站</a>，讲得很仔细)。<br>&emsp;&emsp;使用如下命令在本地的仓库安装hexo：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">cnpm install</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<p> 接下来，可以打开浏览器使用域名localhost:4000来访问本机地址。hexo默认端口号是4000。<br>&emsp;&emsp;如下也是一些hexo常用的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean（清理缓存文件和原来的静态文件例如：db.json和public里面的文件）</span><br><span class="line">hexo g（g: generate。生成静态文件：public里面）</span><br><span class="line">hexo d（d: deploy。将当前环境远端部署）</span><br><span class="line">hexo s（s: server。 将当前环境在本地测试部署，及在localhost:4000可以访问）</span><br><span class="line">hexo new (用于生成特定名称的博客markdown文件)</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;在本地仓库仓库的hexo部署好之后使用<code>hexo g</code>命令之后在localhost:4000访问生成的默认网站，以此可以表明安装成功。</p>
+<h4 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h4><p>&emsp;&emsp;在hexo的安装目录下找到_config.yml文件，这是hexo的配置文件，在里面加上如下部署信息（<em>注意冒号后面都有一个空格，不然会出现部署文件编写错误的情况</em>）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:</span><br><span class="line">    github: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>然后使用如下命令部署。这样就可以在github远端看到仓库里面生成了很多静态文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install  hexo-deployer-git --save</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>为了让部署更加明晰，可以参考以下的hexo目录机构及其主要文件功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./_config.yml	hexo配置文件</span><br><span class="line">./public	存放生成的HTML文件</span><br><span class="line">./source/_posts	编辑的markdown文件</span><br><span class="line">./theme	存放主题的文件夹（每个主题文件夹中的_config.yml是主题的配置文件例如：./theme/landscape/_config.yml、./theme/next/_config_yml）</span><br></pre></td></tr></table></figure></p>
+<h4 id="hexo基本配置"><a href="#hexo基本配置" class="headerlink" title="hexo基本配置"></a>hexo基本配置</h4><p>&emsp;&emsp;在hexo的配置文件config_yml中可以使用如下几项用于修改个性化信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title 设置用于网站的主题名</span><br><span class="line">subtitle 设置网站的小标题</span><br><span class="line">description 设置网站的描述</span><br><span class="line">author 设置作者</span><br><span class="line">language 设置语言模式</span><br><span class="line">post_asset_folder 设置后每次生成文章的时候会新建存放图片的一个同名文件件</span><br><span class="line">avatar 设置头像</span><br><span class="line">post_asset_folder 设置是否自动生成同名的博客文件夹（存放图片或其他文件）</span><br></pre></td></tr></table></figure></p>
+<p>除此之外，hexo往往会借助使用主题配置，便于个性化设置，这里以next主题为例。先从github将主题仓库克隆到本地<code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code>。接下来打开hexo的配置文件，将<code>theme</code>选项改为<code>next</code>。然后可以使用之前介绍的<code>hexo g</code>生成静态文件，<code>hexo s</code>运行到本地服务器在本地进行查看。最后可以通过修改主题配置文件进行个性化选择。</p>
+<h5 id="主题风格"><a href="#主题风格" class="headerlink" title="主题风格"></a>主题风格</h5><p>&emsp;&emsp;通过修改主题配置文件里面的<code>sheme</code>对<code>next</code>风格修改，目前默认的有<code>Muse, Mist, Pisces, Gemini</code>四种风格可供选择。</p>
+<h5 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h5><p>&emsp;&emsp;主题配置文件中，<code>menu</code>设置部分的<code>home</code>是主页，<code>catergories</code>是设置分类，<code>archives</code>是设置归档，<code>tag</code>设置标签，可以用注释的方式进行选择。若取消<code>categories</code>和<code>tag</code>的注释，接下来需要使用<code>hexo new page categories</code>和<code>hexo new page tags</code>生成相应的markdown文件，然后在./source/文件夹中可以找到相应的<code>categories</code>和<code>tags</code>的<code>index.md</code>配置文件。最后分别添加<code>type: &quot;categories&quot;</code>和<code>type: &quot;tags&quot;</code>字段。示例如下：其中的<code>comments</code>字段可以用于设置评论功能。除此之外，主题配置文件中<code>auto_excerpt</code>字段用于设置摘要。如果需要其他的第三方配置，例如需要解析数学公式等，需要更改主题配置文件的mathjax字段，将默认的false改为true。同时在需要加载mathjax的markdown页面头部加上<code>mathjax: true</code>，这样可以确保不必要地在所有页面加载mathjax提高网页执行效率。<br><img src="/2019/01/20/博客搭建、发布及markdown的基本使用/菜单设置.png" title="[菜单设置]"><img src="/2019/01/20/博客搭建、发布及markdown的基本使用/categories_index.md.png" title="[categories_index]"><img src="/2019/01/20/博客搭建、发布及markdown的基本使用/tags_index.md.png" title="[tags_index]"><br><!-- <div align=center>![菜单设置](./博客建立/菜单设置.png)</div><div align=center>![categories_index](./博客建立/categories_index.md.png)</div><div align=center>![tags_index](./博客建立/tags_index.md.png) </div> --></p>
+<h3 id="博客发布"><a href="#博客发布" class="headerlink" title="博客发布"></a>博客发布</h3><p>&emsp;&emsp;使用<code>hexo new</code>生成相应名称markdown文件（位于./source/_post/），然后进行编辑。使用markdown语法编辑完成之后，保存，然后可以<code>hexo g</code>和<code>hexo s</code>生成静态文件，在本地进行测试。如果测试没有问题，最后使用<code>hexo d</code>发布。</p>
+<h3 id="博客环境配置的常见问题"><a href="#博客环境配置的常见问题" class="headerlink" title="博客环境配置的常见问题"></a>博客环境配置的常见问题</h3><ol>
+<li>报错” ERROR Plugin load failed: hexo-deployer-git “<blockquote>
+<p>尝试解决方案：<code>cnpm install hexo-deployer-git --save</code>。</p>
+</blockquote>
+</li>
+<li>报错”ERROR Plugin load failed: hexo-generator-json-content “<blockquote>
+<p>尝试解决方案：将node升级；同时尝试命令<code>cnpm i hexo-generator-json-content --save</code>。</p>
+</blockquote>
+</li>
+<li>报错出现SSH方面链接问题，说明是远端访问没有正确连接。检查hexo配置文件中的deploy字段信息。</li>
+</ol>
+<h3 id="markdown的基本使用"><a href="#markdown的基本使用" class="headerlink" title="markdown的基本使用"></a>markdown的基本使用</h3><h4 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h4><h5 id="标题控制"><a href="#标题控制" class="headerlink" title="标题控制"></a>标题控制</h5><p>&emsp;&emsp;markdown支持最多六级标题，#表示一级标题，##表示二级标题，以此类推。其分别和HTML中的h1-&gt;h6对应。<strong>注意#后面有一个空格</strong>标题的使用和效果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级</span><br><span class="line">## 二级</span><br><span class="line">### 三级</span><br><span class="line">#### 四级</span><br><span class="line">##### 五级</span><br><span class="line">###### 六级</span><br></pre></td></tr></table></figure></p>
+<img src="/2019/01/20/博客搭建、发布及markdown的基本使用/标题使用示例.png" title="[标题使用示例]">
+<!-- ![标题使用示例](./博客建立/标题使用示例.png) -->
+<h5 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h5><p>&emsp;&emsp;利用两个“`”符号包括起来就可形成行内式代码结构。同时在代码段中可以使用Tab键作为缩进，一般一个Tab键的缩进相当于四个space的缩进。<br>&emsp;&emsp;对于多行的代码格式可以采用两行```将代码段包括。这样就可以形成单独成成段的代码。另外，对于多行代码段结构，可以在第一行的```后面加上代码类型例如：C++格式的代码可以使用cpp进行标注。行内代码段效果如下：<code>行内代码段</code>;单独成块的代码段：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">book</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="built_in">string</span> m_name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h5><p>&emsp;&emsp;使用>符号加上一个空格可以将文字单列成一小段，并且>符号还可以嵌套使用。<br>使用效果如下：</p>
+<blockquote>
+<p>引用块 </p>
+<blockquote>
+<p>引用块</p>
+<blockquote>
+<blockquote>
+<p>引用块</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h5 id="列表块格式"><a href="#列表块格式" class="headerlink" title="列表块格式"></a>列表块格式</h5><p>&emsp;&emsp;markdown语法中使用*,+或-加上一个空格来表示无序表；使用一个数字和一个英文句号表示有序表。另外有序和无序的表示还可以搭配使用。使用效果如下：</p>
+<ul>
+<li>无序表1</li>
+<li>无序表2</li>
+</ul>
+<ol>
+<li>有序表1 </li>
+<li>有序表2</li>
+</ol>
+<h5 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h5><p>&emsp;&emsp;表格的构造方式与表格的性状相似用如下代码构造表格。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">姓名|班级|学号</span><br><span class="line">-|-|-</span><br><span class="line">狗|111|111</span><br><span class="line">猫|222|222</span><br><span class="line">鼠|333|333</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>班级</th>
+<th>学号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>狗</td>
+<td>111</td>
+<td>111</td>
+</tr>
+<tr>
+<td>猫</td>
+<td>222</td>
+<td>222</td>
+</tr>
+<tr>
+<td>鼠</td>
+<td>333</td>
+<td>333</td>
+</tr>
+</tbody>
+</table>
+<p>其表格默认的对其方式均为左对齐，需要调整对其方式可以在表头构造部分加上‘:’冒号，当冒号位于左侧、两侧和右侧的时候分别表示左对齐，居中和右对齐。例如上述表格三列分别按照左对齐，居中和右对齐方式排列就有如下构造方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">姓名|班级|学号</span><br><span class="line">:-|:-:|-:</span><br><span class="line">狗|111|111</span><br><span class="line">猫|222|222</span><br><span class="line">鼠|333|333</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">姓名</th>
+<th style="text-align:center">班级</th>
+<th style="text-align:right">学号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">狗</td>
+<td style="text-align:center">111</td>
+<td style="text-align:right">111</td>
+</tr>
+<tr>
+<td style="text-align:left">猫</td>
+<td style="text-align:center">222</td>
+<td style="text-align:right">222</td>
+</tr>
+<tr>
+<td style="text-align:left">鼠</td>
+<td style="text-align:center">333</td>
+<td style="text-align:right">333</td>
+</tr>
+</tbody>
+</table>
+<p>对于复杂的表格也可以借助markdown可视化编辑器进行构建。</p>
+<h4 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h4><p>*斜体文字*&emsp;<em>斜体文字</em>&emsp;快捷键：ctrl+i</p>
+<p>**加粗字体**&emsp;<strong>加粗字体</strong>&emsp;快捷键：ctrl+b</p>
+<p>***倾斜加粗***&emsp;<strong><em>倾斜加粗</em></strong>&emsp; 快捷键：先ctrl+i；然后ctrl+b</p>
+<p>~~删除线~~&emsp;<del>删除线</del></p>
+<p>字体大小可以通过如下HTML格式进行调整：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;font size=&quot;10 &quot;&gt;十号字体实现效果&lt;/font&gt;&lt;br/&gt;</span><br><span class="line">&lt;font size=&quot;5 &quot;&gt;十号字体实现效果&lt;/font&gt;&lt;br/&gt;</span><br><span class="line">&lt;font size=&quot;2 &quot;&gt;十号字体实现效果&lt;/font&gt;&lt;br/&gt;</span><br></pre></td></tr></table></figure></p>
+<p><font size="10 ">10号字体实现效果</font><br><font size="5 ">5号字体实现效果</font><br><font size="2 ">2号字体实现效果</font><br></p>
+<p>字体的颜色调整中同样可以使用HTML的格式效果进行渲染，六位十六进制的数字代表颜色RGB，主要的颜色配置方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color=&quot;#FFFFFF&quot;&gt;&lt;/font&gt;&lt;br/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中每一个位数字都可以用0~F的十六进制数字表示，每两位代表一种原色。例如R可以使用FF0000表示。</p>
+<p><font color="#FF0000">FF0000的颜色</font><br><font color="#00FF00">00FF00的颜色</font><br><font color="#0000FF">00FF00的颜色</font><br></p>
+<h4 id="图片和链接"><a href="#图片和链接" class="headerlink" title="图片和链接"></a>图片和链接</h4><p>&emsp;&emsp;图片的插入格式：<code>![图片标注]（图片相对于当前文档的位置）</code>；链接插入格式：<code>[链接标注]（链接地址）</code>。对于图片居中，左对齐和右对齐可以分别使用如下方式控制：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div align=center&gt;![图片标注]（图片相对于当前文档的位置）&lt;/div&gt;</span><br><span class="line">&lt;div align=left（图片相对于当前文档的位置）&lt;/div&gt;</span><br><span class="line">&lt;div align=right&gt;![图片标注]（图片相对于当前文档的位置）&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;<font color="#FF0000">注意:</font><br>&emsp;&emsp;hexo3之后很多插件都用不了了，所以以上的语法可能导致在网站上面的图片解析不了不出来。因此可以使用如下方式进行图片导入，以下三种方式是hexo官方的导入图片方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方式一：&#123;% asset_path 资源名称（可以无需加路径） %&#125;</span><br><span class="line">方式二：&#123;% asset_img 资源名称（可以无需加路径） [title] %&#125; 图片直接显示</span><br><span class="line">方式三：&#123;% asset_link 资源名称（可以无需加路径） [title] %&#125; 图片以链接的展现，点击即可出现</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/博客系统/" rel="tag"># 博客系统</a>
+          
+            <a href="/tags/markdown/" rel="tag"># markdown</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/./image/head.jpg" alt="Hai Xia">
+            
+              <p class="site-author-name" itemprop="name">Hai Xia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#博客搭建"><span class="nav-number">1.</span> <span class="nav-text">博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到github"><span class="nav-number">1.3.</span> <span class="nav-text">部署到github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo基本配置"><span class="nav-number">1.4.</span> <span class="nav-text">hexo基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主题风格"><span class="nav-number">1.4.1.</span> <span class="nav-text">主题风格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#菜单设置"><span class="nav-number">1.4.2.</span> <span class="nav-text">菜单设置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客发布"><span class="nav-number">2.</span> <span class="nav-text">博客发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客环境配置的常见问题"><span class="nav-number">3.</span> <span class="nav-text">博客环境配置的常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#markdown的基本使用"><span class="nav-number">4.</span> <span class="nav-text">markdown的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#段落格式"><span class="nav-number">4.1.</span> <span class="nav-text">段落格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#标题控制"><span class="nav-number">4.1.1.</span> <span class="nav-text">标题控制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码块"><span class="nav-number">4.1.2.</span> <span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#引用块"><span class="nav-number">4.1.3.</span> <span class="nav-text">引用块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表块格式"><span class="nav-number">4.1.4.</span> <span class="nav-text">列表块格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表格"><span class="nav-number">4.1.5.</span> <span class="nav-text">表格</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体格式"><span class="nav-number">4.2.</span> <span class="nav-text">字体格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片和链接"><span class="nav-number">4.3.</span> <span class="nav-text">图片和链接</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hai Xia</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
